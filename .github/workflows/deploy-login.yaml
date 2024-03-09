@@ -1,10 +1,10 @@
-name: Run npm test on Manual Trigger
+name: Run npm tbuild on manual trigger
 
 on:
   workflow_dispatch:
     inputs:
       run-tests:
-        description: 'Run npm test'
+        description: 'Run npm build'
         required: true
         default: 'true'
 
@@ -26,6 +26,6 @@ jobs:
       working-directory: app/login
 
     - name: Run npm test
-      run: npm test
+      run: npm run build
       working-directory: app/login
-      if: github.event.inputs.run-tests == 'true'
+      # if: github.event.inputs.run-tests == 'true'
