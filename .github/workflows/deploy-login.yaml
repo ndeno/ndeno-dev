@@ -1,0 +1,31 @@
+name: Run npm test on Manual Trigger
+
+on:
+  workflow_dispatch:
+    inputs:
+      run-tests:
+        description: 'Run npm test'
+        required: true
+        default: 'true'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js and npm
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+
+    - name: Install dependencies
+      run: npm install
+      working-directory: app/login
+
+    - name: Run npm test
+      run: npm test
+      working-directory: app/login
+      if: github.event.inputs.run-tests == 'true'
