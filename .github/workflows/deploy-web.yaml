@@ -33,3 +33,4 @@ jobs:
         
     - name: Deploy static site to S3 bucket
       run: aws s3 sync dist s3://${{ secrets.NDENO_STATIC_BUCKET}}
+      working-directory: apps/web
