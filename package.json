@@ -6,7 +6,8 @@
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "dev:login": "turbo dev --filter=ndeno-login"
+    "dev:login": "turbo dev --filter=ndeno-login",
+    "dev:web": "turbo dev --filter=ndeno-web"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
