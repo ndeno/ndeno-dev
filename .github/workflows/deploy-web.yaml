@@ -4,7 +4,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -32,4 +32,4 @@ jobs:
         aws-region: ${{ secrets.NDENO_DEV_REGION}}
         
     - name: Deploy static site to S3 bucket
-      run: aws s3 sync /dist s3://${{ secrets.NDENO_STATIC_BUCKET}}
+      run: aws s3 sync dist s3://${{ secrets.NDENO_STATIC_BUCKET}}
