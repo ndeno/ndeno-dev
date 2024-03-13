@@ -1,4 +1,4 @@
-name: Run npm tbuild on manual trigger
+name: Deploy Web
 
 on:
   workflow_dispatch:
