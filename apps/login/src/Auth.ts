@@ -4,8 +4,8 @@ import {
   CognitoUser,
 } from "amazon-cognito-identity-js";
 
-const USER_POOL_ID = "foo";
-const CLIENT_ID = "bar";
+const USER_POOL_ID = process.env.NDENO_DEV_USER_POOL_ID;
+const CLIENT_ID = process.env.NDENO_DEV_PUBLIC_CLIENT_1_ID;
 
 export default function auth({
   email,
