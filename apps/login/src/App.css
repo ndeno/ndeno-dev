@@ -1,49 +1,60 @@
+@import '@radix-ui/colors/jade.css';
+
+body {
+  background-color: var(--jade-2); 
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
-  text-align: center;
+  background-color: var(--jade-3); 
+  color: var(--jade-8);
 }
-
 
 form {
   display: flex;
   flex-direction: column;
   gap: 6px;
+  padding: 36px 0;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+input {
+  width: 200px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  padding: 0 10px;
+  height: 36px;
+  font-size: 15px;
+  line-height: 1;
+  color: white;
+  background-color: var(--jade-5);
+  box-shadow: 0 0 0 1px var(--jade-8);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+input:focus {
+  box-shadow: 0 0 0 2px var(--jade-9);
+}
+.Input::selection {
+  background-color: var(--jade-9);
+} 
+
+
+button {
+  height: 36px;
+  width: 64px;
+  margin: 6px 0;
+  background-color: var(--jade-5); 
+  color: var(--jade-8);
+  border-radius: 6px;
 }
 
-.card {
-  padding: 2em;
+button:hover {
+  border-color: var(--jade-8);
 }
-
-.read-the-docs {
-  color: #888;
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
 }

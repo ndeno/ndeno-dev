@@ -2,6 +2,14 @@ import auth from "./Auth";
 import "./App.css";
 
 function App() {
+  return (
+    <main>
+      <Login />
+    </main>
+  );
+}
+
+function Login() {
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
 
@@ -12,19 +20,22 @@ function App() {
     const email = target.email.value;
     const password = target.password.value;
 
-    console.log({ email, password });
-
     auth({ email, password });
   };
 
   return (
-    <main>
-      <form onSubmit={handleSubmit}>
-        <input type="text" name="email" />
-        <input type="password" name="password" />
-        <button type="submit">submit</button>
-      </form>
-    </main>
+    <form onSubmit={handleSubmit}>
+      <label htmlFor="email">Email</label>
+      <input
+        className="Input"
+        type="text"
+        id="email"
+        autoComplete="chrome-off"
+      />
+      <label htmlFor="password">Password</label>
+      <input className="Input" type="password" id="password" />
+      <button type="submit">login</button>
+    </form>
   );
 }
 
