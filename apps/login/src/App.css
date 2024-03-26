@@ -2,6 +2,7 @@
 
 body {
   background-color: var(--jade-2); 
+  font-size: 14px;
 }
 
 #root {
@@ -16,45 +17,45 @@ form {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  padding: 36px 0;
 }
 
 input {
+  all:unset;
   width: 200px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border-radius: 6px;
+  /* border-radius: 6px; */
   padding: 0 10px;
   height: 36px;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1;
-  color: white;
-  background-color: var(--jade-5);
-  box-shadow: 0 0 0 1px var(--jade-8);
+  color:var(--jade-9);
+  border-bottom: solid 1px;
+  /* background-color: var(--jade-5); */
+  /* border-color: var(--jade-5); */
 }
 
-input:focus {
-  box-shadow: 0 0 0 2px var(--jade-9);
-}
-.Input::selection {
-  background-color: var(--jade-9);
-} 
 
 
 button {
   height: 36px;
-  width: 64px;
-  margin: 6px 0;
-  background-color: var(--jade-5); 
+  /* width: 92px; */
+  margin: 18px 0;
+  background-color: var(--jade-5);
   color: var(--jade-8);
-  border-radius: 6px;
+  /* border-radius: 6px; */
+  line-height: 1.5;
+  font-weight: 400;
+  font-size: 14px;
+  border-color: var(--jade-5);
 }
 
 button:hover {
-  border-color: var(--jade-8);
+  border-color: var(--jade-6);
 }
+
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 1px auto;
 }

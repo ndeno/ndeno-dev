@@ -25,6 +25,7 @@ function Login() {
 
   return (
     <form onSubmit={handleSubmit}>
+      <h2>ndeno login</h2>
       <label htmlFor="email">Email</label>
       <input
         className="Input"
@@ -34,7 +35,7 @@ function Login() {
       />
       <label htmlFor="password">Password</label>
       <input className="Input" type="password" id="password" />
-      <button type="submit">login</button>
+      <button type="submit">Sign in</button>
     </form>
   );
 }

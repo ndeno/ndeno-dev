@@ -7,6 +7,13 @@ import {
 const USER_POOL_ID = process.env.NDENO_DEV_USER_POOL_ID;
 const CLIENT_ID = process.env.NDENO_DEV_PUBLIC_CLIENT_1_ID;
 
+const redirect = () => {
+  const url = new URL(window.location.href);
+  const redirectUrl = url.searchParams.get("redirect");
+
+  window.location.href = redirectUrl ? redirectUrl : "https://www.example.com";
+};
+
 export default function auth({
   email,
   password,
@@ -35,12 +42,12 @@ export default function auth({
   cognitoUser.authenticateUser(authenticationDetails, {
     onSuccess: function (result) {
       result.getAccessToken().getJwtToken();
-
-      console.log("success");
+      redirect();
     },
 
     onFailure: function (err) {
-      alert(err.message || JSON.stringify(err));
+      console.log(err.message || JSON.stringify(err));
+      // TODO add error callback for render on login form
     },
   });
 }
