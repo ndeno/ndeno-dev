@@ -14,6 +14,19 @@ const redirect = () => {
   window.location.href = redirectUrl ? redirectUrl : "https://www.example.com";
 };
 
+function setCookie(name: string, value: string, expirationDays: number) {
+  const expirationDate = new Date();
+  expirationDate.setDate(expirationDate.getDate() + expirationDays);
+
+  const cookieValue =
+    encodeURIComponent(value) +
+    "; expires=" +
+    expirationDate.toUTCString() +
+    "; path=/";
+    
+  document.cookie = name + "=" + cookieValue;
+}
+
 export default function auth({
   email,
   password,
@@ -41,7 +54,8 @@ export default function auth({
 
   cognitoUser.authenticateUser(authenticationDetails, {
     onSuccess: function (result) {
-      result.getAccessToken().getJwtToken();
+      const jwt = result.getAccessToken().getJwtToken();
+      setCookie("ndeno-session", jwt, 1);
       redirect();
     },
 
