@@ -1,12 +1,20 @@
 import auth from "./Auth";
 import "./App.css";
+// TODO red squiggles
 import { AuthProvider } from "ndeno-auth";
+
+const REDIRECT_DOMAIN = process.env.NDENO_DOMAIN || "";
+
+const redirect = () => {
+  window.location.href = `https://${REDIRECT_DOMAIN}`;
+};
 
 function App() {
   return (
     <AuthProvider
-      onAuthSuccess={() => console.log("yes")}
+      onAuthSuccess={redirect}
       onAuthError={() => console.log("error")}
+      // TODO add skeleton suspense
     >
       <main>
         <Login />
@@ -31,7 +39,7 @@ function Login() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h2>ndeno login</h2>
+      <h2>{REDIRECT_DOMAIN} login</h2>
       <label htmlFor="email">Email</label>
       <input
         className="Input"

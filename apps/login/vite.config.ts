@@ -4,7 +4,7 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig(({ _command, mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
-  
+
   return {
     define: {
       global: {},
@@ -14,6 +14,7 @@ export default defineConfig(({ _command, mode }) => {
       "process.env.NDENO_DEV_USER_POOL_ID": JSON.stringify(
         env.NDENO_DEV_USER_POOL_ID
       ),
+      "process.env.NDENO_DOMAIN": JSON.stringify(env.NDENO_DOMAIN),
     },
     plugins: [react()],
 

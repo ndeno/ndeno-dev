@@ -1,6 +1,9 @@
 import React from "react";
 import { CognitoJwtVerifier } from "aws-jwt-verify";
 
+type VerifierCreate = ReturnType<(typeof CognitoJwtVerifier)["create"]>;
+type VerifierPayload = Awaited<ReturnType<VerifierCreate["verify"]>>;
+
 type AuthContext = {
   isSignedIn: boolean;
 };
@@ -34,29 +37,28 @@ const verifyWebToken = async () => {
   const token = getCookieValue("ndeno-session");
 
   if (!token) {
-    return false;
+    return null;
   }
 
   try {
-    const payload = await verifier.verify(token);
-    console.log("Token is valid. Payload:", payload);
+    const payload: VerifierPayload = await verifier.verify(token);
+    return payload;
   } catch {
     console.log("Token not valid!");
-    return false;
+    return null;
   }
-
-  return true;
 };
 
 const AuthContext = React.createContext<AuthContext>({
   isSignedIn: false,
 });
+
 const useAuth = () => React.useContext(AuthContext);
 
 type Props = {
   children: React.ReactNode;
-  onAuthSuccess: (onFulfilled: any) => void;
-  onAuthError?: (onFulfilled: any) => void;
+  onAuthSuccess: (onFulfilled: VerifierPayload | null) => void;
+  onAuthError?: () => void;
 };
 
 const AuthProvider = ({ children, onAuthSuccess, onAuthError }: Props) => {
