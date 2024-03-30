@@ -1,11 +1,17 @@
 import auth from "./Auth";
 import "./App.css";
+import { AuthProvider } from "ndeno-auth";
 
 function App() {
   return (
-    <main>
-      <Login />
-    </main>
+    <AuthProvider
+      onAuthSuccess={() => console.log("yes")}
+      onAuthError={() => console.log("error")}
+    >
+      <main>
+        <Login />
+      </main>
+    </AuthProvider>
   );
 }
 
