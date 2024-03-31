@@ -18,11 +18,11 @@ jobs:
 
     - name: Install dependencies
       run: npm install
-      working-directory: /
+      # working-directory: /
 
     - name: Run build
       run: npm run build:login
-      working-directory: /
+      # working-directory: /
 
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v4
