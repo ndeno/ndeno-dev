@@ -8,7 +8,8 @@
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "dev:login": "turbo dev --filter=ndeno-login",
     "dev:web": "turbo dev --filter=ndeno-web",
-    "dev:auth": "turbo dev --filter=ndeno-auth"
+    "dev:auth": "turbo dev --filter=ndeno-auth",
+    "build:login": "turbo build --filter=ndeno-login"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
