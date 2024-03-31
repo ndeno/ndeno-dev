@@ -1,15 +1,10 @@
-name: Run npm tbuild on manual trigger
+name: Deploy Login
 
 on:
   workflow_dispatch:
-    inputs:
-      run-tests:
-        description: 'Run npm build'
-        required: true
-        default: 'true'
 
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
@@ -25,7 +20,17 @@ jobs:
       run: npm install
       working-directory: apps/login
 
-    - name: Run npm test
+    - name: Run build
       run: npm run build
       working-directory: apps/login
-      # if: github.event.inputs.run-tests == 'true'
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.NDENO_DEV_REGION}}
+        
+    - name: Deploy static site to S3 bucket
+      run: aws s3 sync dist s3://${{ secrets.NDENO_STATIC_BUCKET}}/login
+      working-directory: apps/login
