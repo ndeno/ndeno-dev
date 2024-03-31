@@ -32,5 +32,5 @@ jobs:
         aws-region: ${{ secrets.NDENO_DEV_REGION}}
         
     - name: Deploy static site to S3 bucket
-      run: aws s3 sync dist s3://${{ secrets.NDENO_STATIC_BUCKET}}/login
+      run: aws s3 sync dist s3://${{ secrets.NDENO_DEV_BUCKET}}/login
       working-directory: apps/login
