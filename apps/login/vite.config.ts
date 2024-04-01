@@ -6,6 +6,7 @@ export default defineConfig(({ _command, mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
 
   return {
+    base: `https://dev.${env.NDENO_DOMAIN}/login`,
     define: {
       global: {},
       "process.env.NDENO_DEV_PUBLIC_CLIENT_1_ID": JSON.stringify(
