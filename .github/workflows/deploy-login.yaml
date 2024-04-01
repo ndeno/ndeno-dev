@@ -19,6 +19,8 @@ jobs:
     - name: Set environment variables
       run: |
           echo "NDENO_DOMAIN=${{ secrets.NDENO_DOMAIN}}" >> $GITHUB_ENV
+          echo "NDENO_DEV_USER_POOL_ID=${{ secrets.NDENO_DEV_USER_POOL_ID}}" >> $GITHUB_ENV
+          echo "NDENO_DEV_PUBLIC_CLIENT_1_ID=${{ secrets.NDENO_DEV_PUBLIC_CLIENT_1_ID}}" >> $GITHUB_ENV
 
     - name: Install dependencies
       run: npm install
