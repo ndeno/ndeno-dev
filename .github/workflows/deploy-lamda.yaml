@@ -11,11 +11,6 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Set up Node.js and npm
-      uses: actions/setup-node@v4
-      with:
-        node-version: '20'
-
     - name: Configure AWS Credentials
       uses: aws-actions/configure-aws-credentials@v4
       with:
@@ -23,6 +18,6 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: ${{ secrets.NDENO_DEV_REGION}}
         
-    - name: Deploy static site to S3 bucket
-      run: aws s3 sync . s3://${{ secrets.NDENO_STATIC_BUCKET}}/lambda
+    - name: Deploy lambda files
+      run: aws s3 sync . s3://${{ secrets.NDENO_DEV_BUCKET}}/lambda
       working-directory: packages/ndeno-lambda/src
