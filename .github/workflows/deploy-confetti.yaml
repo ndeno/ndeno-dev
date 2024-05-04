@@ -1,4 +1,4 @@
-name: Deploy Login
+name: Deploy Confetti
 
 on:
   workflow_dispatch:
