@@ -9,7 +9,7 @@ export default defineConfig(({ _command, mode }) => {
 
   return {
     // TODO add to dev only
-    // base: `https://dev.${DEV_DOMAIN}/confetti`,
+    base: `https://dev.${DEV_DOMAIN}/confetti`,
     define: {
       global: {},
       "process.env.NDENO_DOMAIN": JSON.stringify(env.NDENO_DOMAIN),
