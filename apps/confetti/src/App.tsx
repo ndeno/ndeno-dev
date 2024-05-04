@@ -41,7 +41,7 @@ async function handleClick() {
 
   try {
     const res = await fetch(
-      `https://api.${NDENO_DOMAIN}/prod/hello`,
+      `https://api.${NDENO_DOMAIN}/hello`,
       options
     );
 
