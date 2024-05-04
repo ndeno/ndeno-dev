@@ -2,7 +2,6 @@ import "./App.css";
 
 const NDENO_DOMAIN = process.env.NDENO_DOMAIN || "";
 
-
 function getAllCookies() {
   var cookies = document.cookie.split(";"); // Split cookies by semicolon
   var cookieMap = new Map<string, string>();
@@ -30,6 +29,7 @@ async function handleClick() {
   }
 
   const headers = {
+    "Access-Control-Allow-Origin": "*",
     "Content-Type": "application/json",
     Authorization: `Bearer ${sessionCookie}`,
   };
@@ -40,10 +40,7 @@ async function handleClick() {
   };
 
   try {
-    const res = await fetch(
-      `https://api.${NDENO_DOMAIN}/hello`,
-      options
-    );
+    const res = await fetch(`https://api.${NDENO_DOMAIN}/hello`, options);
 
     console.log({ res });
   } catch (e) {
