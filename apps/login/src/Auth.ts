@@ -23,7 +23,7 @@ function setCookie(name: string, value: string, expirationDays: number) {
     "; expires=" +
     expirationDate.toUTCString() +
     "; path=/";
-    
+
   document.cookie = name + "=" + cookieValue;
 }
 

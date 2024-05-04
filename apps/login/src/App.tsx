@@ -1,11 +1,10 @@
 import auth from "./Auth";
 import "./App.css";
-// TODO red squiggles
 import { AuthProvider } from "ndeno-auth";
 
 const REDIRECT_DOMAIN = process.env.NDENO_DOMAIN || "";
 
-const redirect = () => {
+const redirect = () => () => {
   window.location.href = `https://${REDIRECT_DOMAIN}`;
 };
 

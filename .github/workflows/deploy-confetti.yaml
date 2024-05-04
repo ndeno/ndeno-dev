@@ -1,0 +1,38 @@
+name: Deploy Login
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Node.js and npm
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+
+    - name: Set environment variables
+      run: |
+          echo "NDENO_DOMAIN=${{ secrets.NDENO_DOMAIN}}" >> $GITHUB_ENV
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Run build
+      run: npm run build:confetti
+
+    - name: Configure AWS Credentials
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.NDENO_DEV_REGION}}
+        
+    - name: Deploy static site to S3 bucket
+      run: aws s3 sync dist s3://${{ secrets.NDENO_DEV_BUCKET}}/confetti
+      working-directory: apps/confetti

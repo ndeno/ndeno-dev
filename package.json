@@ -9,7 +9,10 @@
     "dev:login": "turbo dev --filter=ndeno-login",
     "dev:web": "turbo dev --filter=ndeno-web",
     "dev:auth": "turbo dev --filter=ndeno-auth",
-    "build:login": "turbo build --filter=ndeno-login"
+    "dev:confetti": "turbo dev --filter=confetti",
+    "build:login": "turbo build --filter=ndeno-login",
+    "build:confetti": "turbo build --filter=confetti",
+    "clean": "turbo run clean"
   },
   "devDependencies": {
     "@repo/eslint-config": "*",
