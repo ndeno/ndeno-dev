@@ -1,6 +1,6 @@
 import "./App.css";
 
-const NDENO_DOMAIN = process.env.NDENO_DOMAIN || "";
+const NDENO_DOMAIN = import.meta.env.NDENO_DOMAIN || "";
 
 function getAllCookies() {
   var cookies = document.cookie.split(";"); // Split cookies by semicolon
@@ -40,9 +40,7 @@ async function handleClick() {
   };
 
   try {
-    const res = await fetch(`https://api.${NDENO_DOMAIN}/hello`, options);
-
-    console.log({ res });
+    await fetch(`https://api.${NDENO_DOMAIN}/hello`, options);
   } catch (e) {
     console.log(e);
   }
