@@ -6,7 +6,8 @@
   "types": "es/index.d.ts",
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build": "storybook build"
+    "build": "storybook build",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@radix-ui/colors": "3.0.0"
