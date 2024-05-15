@@ -1,11 +1,10 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
 import typescript from "@rollup/plugin-typescript";
-import dts from "rollup-plugin-dts";
+import { dts } from "rollup-plugin-dts";
 import terser from "@rollup/plugin-terser";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
-import ignore from "rollup-plugin-ignore";
 
 const packageJson = require("./package.json");
 
@@ -38,6 +37,13 @@ export default [
       }),
     ],
     external: ["react", "react-dom"],
+  },
+  {
+    input: "./index.ts",
+    output: [{ file: packageJson.types, format: "es" }],
+    external: [/\.css$/], // ignore .scss file
+
+    plugins: [dts()], // Ignore all CSS files
   },
   // {
   //   // input: "index.ts",

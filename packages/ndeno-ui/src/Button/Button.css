@@ -1,9 +1,9 @@
 @import '@radix-ui/colors/green.css';
 
 button {
+  /* reset */
   all: unset;
   
-  /* reset */
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -16,6 +16,8 @@ button {
   border: 1px solid;
   background-color: var(--green-4);
   color: var(--green-11);
+
+  margin: 4px 4px;
 }
 
 button:hover {

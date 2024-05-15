@@ -35,27 +35,3 @@ input {
   /* background-color: var(--jade-5); */
   /* border-color: var(--jade-5); */
 }
-
-
-
-button {
-  height: 36px;
-  /* width: 92px; */
-  margin: 18px 0;
-  background-color: var(--jade-5);
-  color: var(--jade-8);
-  /* border-radius: 6px; */
-  line-height: 1.5;
-  font-weight: 400;
-  font-size: 14px;
-  border-color: var(--jade-5);
-}
-
-button:hover {
-  border-color: var(--jade-6);
-}
-
-button:focus,
-button:focus-visible {
-  outline: 1px auto;
-}

@@ -1,6 +1,7 @@
 import auth from "./Auth";
 import "./App.css";
 import { AuthProvider } from "ndeno-auth";
+import { Button } from "ndeno-ui";
 
 const REDIRECT_DOMAIN = process.env.NDENO_DOMAIN || "";
 
@@ -48,7 +49,7 @@ function Login() {
       />
       <label htmlFor="password">Password</label>
       <input className="Input" type="password" id="password" />
-      <button type="submit">Sign in</button>
+      <Button type="submit">Sign in</Button>
     </form>
   );
 }
