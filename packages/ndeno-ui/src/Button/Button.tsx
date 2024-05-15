@@ -1,4 +1,4 @@
-import "./button.css";
+import "./Button.css";
 
 type Props = React.ButtonHTMLAttributes<HTMLButtonElement>;
 

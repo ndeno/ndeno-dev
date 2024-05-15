@@ -5,23 +5,25 @@ import dts from "rollup-plugin-dts";
 import terser from "@rollup/plugin-terser";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
+import ignore from "rollup-plugin-ignore";
 
 const packageJson = require("./package.json");
 
 export default [
   {
-    input: "./index.tsx",
+    input: "./index.ts",
     output: [
       {
         file: packageJson.main,
         format: "cjs",
         sourcemap: true,
       },
-      // {
-      //   file: packageJson.module,
-      //   format: "esm",
-      //   sourcemap: false,
-      // },
+      {
+        // file: 'dist/esm/index.js',
+        file: packageJson.module,
+        format: "es",
+        sourcemap: true,
+      },
     ],
     plugins: [
       peerDepsExternal(),
@@ -29,14 +31,20 @@ export default [
       commonjs(),
       typescript({ tsconfig: "./tsconfig.json" }),
       terser(),
-      postcss(),
+      postcss({
+        minimize: true,
+        modules: true,
+        extract: true,
+      }),
     ],
     external: ["react", "react-dom"],
   },
   // {
-  //   input: "src/index.ts",
-  //   output: [{ file: "dist/types.d.ts", format: "es" }],
+  //   // input: "index.ts",
+  //   // output: [{ file: "dist/types.d.ts", format: "es" }],
   //   // @ts-ignore
-  //   plugins: [dts.default()],
+  //   // plugins: [
+  //   //   ignore(["**/*.css"]), // Ignore all CSS files
+  //   // ],
   // },
 ];
