@@ -56,6 +56,7 @@
     "rollup-plugin-postcss": "4.0.2",
     "safe-identifier": "0.4.2",
     "storybook": "^8.1.2",
+    "storybook-addon-themes": "^6.1.0",
     "typescript": "4.8.4"
   },
   "browserslist": [

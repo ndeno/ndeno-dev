@@ -1,12 +1,15 @@
 import { style } from "@vanilla-extract/css";
-
 import { vars } from "../../variables/colors.css";
 
 export const rootStyle = style({
   appearance: "none",
-  borderRadius: 10,
-  padding: 15,
-  border: `1px solid ${vars.color.primary}`,
-  backgroundColor: vars.color.tertiary,
-  color: vars.color.primary,
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  borderRadius: "4px",
+  padding: "0 15px",
+  lineHeight: "1",
+  fontSize: "15px",
+  height: "35px",
+  color: vars.colors.primary,
 });
