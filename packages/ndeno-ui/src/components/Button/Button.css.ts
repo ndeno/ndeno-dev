@@ -11,5 +11,13 @@ export const rootStyle = style({
   lineHeight: "1",
   fontSize: "15px",
   height: "35px",
-  color: vars.colors.primary,
+  color: vars.colors.text.normal,
+  backgroundColor: vars.colors.primary,
+  border: "unset",
+  ":hover": {
+    backgroundColor: vars.colors.primaryInteract,
+  },
+  ":focus": {
+    boxShadow: `0 0 0 2px ${vars.colors.primaryInteract}`,
+  },
 });

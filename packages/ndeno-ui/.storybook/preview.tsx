@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Decorator } from "@storybook/react";
-import { lightTheme, darkTheme } from "../src/variables/colors.css";
+import { lightTheme, darkTheme, vars } from "../src/variables/colors.css";
+import "./preview.css";
 
 const ThemeDecorator: Decorator = (Story, context) => {
   const [theme, setTheme] = useState<string>(lightTheme);
@@ -9,16 +10,47 @@ const ThemeDecorator: Decorator = (Story, context) => {
     setTheme(newTheme === "light" ? lightTheme : darkTheme);
   };
 
-  return (
-    <div>
-      <div>
-        <button onClick={() => handleThemeChange("light")}>Light Theme</button>
-        <button onClick={() => handleThemeChange("dark")}>Dark Theme</button>
-      </div>
-      <div className={theme}>
+  if (context.viewMode === "docs") {
+    return (
+      <main className={theme}>
         <Story />
-      </div>
-    </div>
+      </main>
+    );
+  }
+
+  return (
+    <main
+      className={theme}
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        height: "100%",
+        width: "100%",
+      }}
+    >
+      <section
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          background: vars.colors.background,
+          margin: "auto auto",
+          justifyContent: "space-around",
+          height: "100%",
+          width: "100%",
+        }}
+      >
+        <div style={{ margin: "0 auto" }}>
+          <button onClick={() => handleThemeChange("light")}>
+            Light Theme
+          </button>
+          <button onClick={() => handleThemeChange("dark")}>Dark Theme</button>
+        </div>
+        <div style={{ margin: "0 auto" }}>
+          <Story />
+        </div>
+        <div />
+      </section>
+    </main>
   );
 };
 
