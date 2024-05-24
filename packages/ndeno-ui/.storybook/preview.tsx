@@ -32,7 +32,7 @@ const ThemeDecorator: Decorator = (Story, context) => {
         style={{
           display: "flex",
           flexDirection: "column",
-          background: vars.colors.background,
+          background: vars.colors.backgroundLinearGradient,
           margin: "auto auto",
           justifyContent: "space-around",
           height: "100%",
