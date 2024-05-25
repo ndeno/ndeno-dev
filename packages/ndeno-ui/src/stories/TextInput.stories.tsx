@@ -1,13 +1,20 @@
+import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
 
 import { TextInput } from "../components/TextInput/TextInput";
+import { Label } from "../components/Label/Label";
 
-const component = TextInput as unknown as Meta<typeof TextInput>["component"];
+const Component = TextInput as unknown as Meta<typeof TextInput>["component"];
 
 const meta: Meta<typeof TextInput> = {
   title: "Example/TextInput",
-  component,
+  component: () => (
+    <>
+      <Label for="example-input">Example Input</Label>
+      <Component id="example-input" />
+    </>
+  ),
   parameters: {
     layout: "centered",
   },

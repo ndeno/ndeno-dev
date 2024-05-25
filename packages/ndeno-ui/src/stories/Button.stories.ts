@@ -25,3 +25,10 @@ export const Primary: Story = {
     onClick: () => alert("bar"),
   },
 };
+export const Secondary: Story = {
+  args: {
+    children: "foo",
+    onClick: () => alert("bar"),
+    variant: "secondary",
+  },
+};

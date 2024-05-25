@@ -11,8 +11,9 @@ export const rootStyle = style({
   height: "35px",
   fontSize: "15px",
   lineHeight: "1",
-  color: vars.colors.text.normal,
-  backgroundColor: vars.colors.text.background,
+  color: vars.colors.text.contrast,
+  fontFamily: vars.fonts.body,
+  backgroundColor: vars.colors.background,
   border: `1px solid ${vars.colors.border}`,
   ":hover": {
     boxShadow: `0 0 0 1px ${vars.colors.text.normal}`,

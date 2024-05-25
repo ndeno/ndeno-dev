@@ -1,7 +1,7 @@
 import { style } from "@vanilla-extract/css";
 import { vars } from "../../variables/colors.css";
 
-export const rootStyle = style({
+const root = style({
   appearance: "none",
   display: "flex",
   alignItems: "center",
@@ -12,7 +12,7 @@ export const rootStyle = style({
   fontSize: "15px",
   height: "35px",
   color: vars.colors.text.normal,
-  backgroundColor: vars.colors.primary,
+  fontFamily: vars.fonts.body,
   border: "unset",
   ":hover": {
     backgroundColor: vars.colors.primaryInteract,
@@ -21,3 +21,19 @@ export const rootStyle = style({
     boxShadow: `0 0 0 2px ${vars.colors.primaryInteract}`,
   },
 });
+
+export const primary = style([
+  root,
+  {
+    backgroundColor: vars.colors.primary,
+  },
+]);
+
+export const secondary = style([
+  root,
+  {
+    backgroundColor: vars.colors.secondary,
+    color: vars.colors.primary,
+    border: `1px solid ${vars.colors.primary}`,
+  },
+]);

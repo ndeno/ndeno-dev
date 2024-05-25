@@ -5,6 +5,7 @@ export const rootStyle = style({
   fontSize: "15px",
   fontWeight: "500",
   lineHeight: "35px",
-  color: vars.colors.text.normal,
+  color: vars.colors.text.contrast,
+  display: "block",
   fontFamily: vars.fonts.body,
 });

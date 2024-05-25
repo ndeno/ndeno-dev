@@ -5,7 +5,7 @@ import {
   createGlobalTheme,
 } from "@vanilla-extract/css";
 
-const greenLight = {
+const light = {
   green1: "#fbfefc",
   green2: "#f3fbf7",
   green3: "#e4f7ed",
@@ -25,7 +25,7 @@ const greenLight = {
   //   --green-track: #01a275;
 };
 
-const greenDark = {
+const dark = {
   green1: "#0b1310",
   green2: "#111b17",
   green3: "#102d21",
@@ -64,15 +64,15 @@ export const grey = {
   //   --gray-track: #8b8d98;
 };
 
-const root = createGlobalTheme("#app", {
+const root = createGlobalTheme("body", {
   space: {
     small: "4px",
     medium: "8px",
     large: "16px",
   },
   fonts: {
-    heading: "Georgia, Times, Times New Roman, serif",
-    body: "system-ui",
+    heading: "Roboto, sans-seriff",
+    body: "Roboto, sans-seriff",
   },
 });
 
@@ -85,36 +85,47 @@ const colors = createThemeContract({
   border: null,
   text: {
     normal: null,
-    dimmed: null,
-    background: null,
+    contrast: null,
+    dark: null,
+    light: null,
+    // dimmed: null,
+    // contrast: null,
+    // background: null,
   },
 });
 
 export const lightTheme = createTheme(colors, {
-  primary: greenLight.green9,
-  primaryInteract: greenLight.green10,
-  secondary: greenLight.green5,
-  background: greenLight.greenBackground,
-  backgroundLinearGradient: `linear-gradient(${greenLight.green4}, ${greenLight.greenBackground})`,
+  primary: light.green9,
+  primaryInteract: light.green10,
+  secondary: light.green2,
+  background: light.greenBackground,
+  backgroundLinearGradient: `linear-gradient(${light.green4}, ${light.greenBackground})`,
   border: grey.gray8,
   text: {
-    normal: grey.gray12,
-    dimmed: greenLight.green9,
-    background: greenLight.greenBackground,
+    normal: grey.gray1,
+    contrast: dark.green1,
+    dark: grey.gray12,
+    light: grey.gray1,
+    // contrast: grey.gray1,
+    // dimmed: light.green9,
+    // background: light.greenBackground,
   },
 });
 
 export const darkTheme = createTheme(colors, {
-  primary: greenDark.green9,
-  primaryInteract: greenDark.green10,
-  secondary: greenDark.green5,
-  background: greenDark.greenBackground,
-  backgroundLinearGradient: `linear-gradient(${greenDark.green4}, ${greenDark.greenBackground})`,
+  primary: dark.green9,
+  primaryInteract: dark.green10,
+  secondary: dark.green2,
+  background: dark.greenBackground,
+  backgroundLinearGradient: `linear-gradient(${dark.green4}, ${dark.greenBackground})`,
   border: grey.gray8,
   text: {
-    normal: greenDark.greenContrast,
-    dimmed: greenDark.green9,
-    background: greenDark.greenBackground,
+    contrast: grey.gray1,
+    normal: grey.gray1,
+    dark: grey.gray12,
+    light: grey.gray1,
+    // dimmed: dark.green9,
+    // background: dark.greenBackground,
   },
 });
 
