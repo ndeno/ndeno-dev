@@ -25,6 +25,7 @@ const root = style({
 export const primary = style([
   root,
   {
+    color: vars.colors.text.normal,
     backgroundColor: vars.colors.solidBackGround.normal,
     ":hover": {
       backgroundColor: vars.colors.solidBackGround.hover,
@@ -35,7 +36,7 @@ export const primary = style([
 export const secondary = style([
   root,
   {
-    backgroundColor: vars.colors.component.normal,
+    backgroundColor: vars.colors.appBackhround.subtle,
     color: vars.colors.text.lowContrast,
     border: `1px solid ${vars.colors.border.normal}`,
   },

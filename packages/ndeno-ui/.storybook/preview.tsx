@@ -34,7 +34,7 @@ const ThemeDecorator: Decorator = (Story, context) => {
         style={{
           display: "flex",
           flexDirection: "column",
-          background: vars.colors.backgroundLinearGradient,
+          background: `linear-gradient(${vars.colors.component.normal}, ${vars.colors.appBackhround.normal})`,
           margin: "auto auto",
           justifyContent: "space-between",
           height: "100%",
@@ -45,12 +45,12 @@ const ThemeDecorator: Decorator = (Story, context) => {
           {theme === lightTheme ? (
             <MoonIcon
               onClick={() => handleThemeChange("dark")}
-              style={{ color: vars.colors.text.dark }}
+              style={{ color: vars.colors.text.highContrast }}
             />
           ) : (
             <SunIcon
               onClick={() => handleThemeChange("light")}
-              style={{ color: vars.colors.text.normal }}
+              style={{ color: vars.colors.text.highContrast }}
             />
           )}
         </div>

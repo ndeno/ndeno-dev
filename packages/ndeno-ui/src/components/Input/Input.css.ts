@@ -1,5 +1,5 @@
 import { style } from "@vanilla-extract/css";
-import { grey, vars } from "../../variables/colors.css";
+import { vars } from "../../variables/colors.css";
 
 export const rootStyle = style({
   width: "200px",
@@ -11,11 +11,11 @@ export const rootStyle = style({
   height: "35px",
   fontSize: "15px",
   lineHeight: "1",
-  color: vars.colors.text.contrast,
+  color: vars.colors.text.highContrast,
   fontFamily: vars.fonts.body,
-  backgroundColor: vars.colors.background,
-  border: `1px solid ${vars.colors.border}`,
+  backgroundColor: vars.colors.appBackhround.normal,
+  border: `1px solid ${vars.colors.border.subtle}`,
   ":hover": {
-    boxShadow: `0 0 0 1px ${vars.colors.text.normal}`,
+    boxShadow: `0 0 0 1px ${vars.colors.border.normal}`,
   },
 });

@@ -16,7 +16,7 @@ function App() {
       onAuthError={() => console.log("error")}
       // TODO add skeleton suspense
     >
-      <ThemeProvider theme="dark">
+      <ThemeProvider theme="light">
         <Login />
       </ThemeProvider>
     </AuthProvider>

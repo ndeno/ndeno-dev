@@ -39,6 +39,7 @@ const colors = createThemeContract({
     hover: null,
   },
   text: {
+    normal: null,
     lowContrast: null,
     highContrast: null,
   },
@@ -64,6 +65,7 @@ export const lightTheme = createTheme(colors, {
     hover: blue.blue10,
   },
   text: {
+    normal: "white",
     lowContrast: blue.blue11,
     highContrast: blue.blue12,
   },
@@ -89,6 +91,7 @@ export const darkTheme = createTheme(colors, {
     hover: blueDark.blue10,
   },
   text: {
+    normal: blueDark.blue12,
     lowContrast: blueDark.blue11,
     highContrast: blueDark.blue12,
   },
