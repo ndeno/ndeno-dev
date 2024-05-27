@@ -1,7 +1,7 @@
 import React from "react";
-import { primary, secondary } from "./Button.css";
+import { primary, secondary } from "./Box.css";
 
-type Props = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+type Props = React.HtmlHTMLAttributes<HTMLDivElement> & {
   variant: "primary" | "secondary";
 };
 
@@ -19,11 +19,11 @@ const getClass = (variant: Props["variant"]) => {
   }
 };
 
-export const Button = ({ variant = "primary", ...rest }: Props) => {
+export const Box = ({ variant = "primary", ...rest }: Props) => {
   const variantMap: { [x in Props["variant"]]: string } = {
     primary,
     secondary,
   } as const;
 
-  return <button className={getClass(variant)} {...rest} />;
+  return <div className={getClass(variant)} {...rest} />;
 };

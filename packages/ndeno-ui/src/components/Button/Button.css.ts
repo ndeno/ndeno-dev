@@ -11,29 +11,32 @@ const root = style({
   lineHeight: "1",
   fontSize: "15px",
   height: "35px",
-  color: vars.colors.text.normal,
+  color: vars.colors.text.highContrast,
   fontFamily: vars.fonts.body,
   border: "unset",
-  ":hover": {
-    backgroundColor: vars.colors.primaryInteract,
-  },
+  // ":hover": {
+  //   backgroundColor: vars.colors.component.hover,
+  // },
   ":focus": {
-    boxShadow: `0 0 0 2px ${vars.colors.primaryInteract}`,
+    boxShadow: `0 0 0 2px ${vars.colors.border.subtle}`,
   },
 });
 
 export const primary = style([
   root,
   {
-    backgroundColor: vars.colors.primary,
+    backgroundColor: vars.colors.solidBackGround.normal,
+    ":hover": {
+      backgroundColor: vars.colors.solidBackGround.hover,
+    },
   },
 ]);
 
 export const secondary = style([
   root,
   {
-    backgroundColor: vars.colors.secondary,
-    color: vars.colors.primary,
-    border: `1px solid ${vars.colors.primary}`,
+    backgroundColor: vars.colors.component.normal,
+    color: vars.colors.text.lowContrast,
+    border: `1px solid ${vars.colors.border.normal}`,
   },
 ]);

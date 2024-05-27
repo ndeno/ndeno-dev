@@ -1,19 +1,21 @@
 import React from "react";
 import type { Meta, StoryObj } from "@storybook/react";
 import { fn } from "@storybook/test";
+import { ComponentType } from "react";
 
-import { TextInput } from "../components/TextInput/TextInput";
+import { Box } from "../components/Box/Box";
+import { Input } from "../components/Input/Input";
 import { Label } from "../components/Label/Label";
 
-const Component = TextInput as unknown as Meta<typeof TextInput>["component"];
+const Component = Box as unknown as Meta<typeof Box>["component"];
 
-const meta: Meta<typeof TextInput> = {
-  title: "Example/TextInput",
+const meta: Meta<typeof Box> = {
+  title: "Example/Box",
   component: () => (
-    <>
+    <Component>
       <Label for="example-input">Example Input</Label>
-      <Component id="example-input" />
-    </>
+      <Input id="example-input" />
+    </Component>
   ),
   parameters: {
     layout: "centered",
@@ -23,11 +25,11 @@ const meta: Meta<typeof TextInput> = {
 };
 
 export default meta;
-type Story = StoryObj<typeof TextInput>;
+type Story = StoryObj<typeof Box>;
 
 export const Primary: Story = {
   args: {
-    // children: "foo",
-    // onClick: () => alert("bar"),
+    children: "foo",
+    onClick: () => alert("bar"),
   },
 };
