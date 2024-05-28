@@ -25,5 +25,5 @@ export const Box = ({ variant = "primary", ...rest }: Props) => {
     secondary,
   } as const;
 
-  return <div className={getClass(variant)} {...rest} />;
+  return <div className={`box ${getClass(variant)}`} {...rest} />;
 };

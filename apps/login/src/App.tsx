@@ -1,7 +1,7 @@
 import auth from "./Auth";
 import "./App.css";
 import { AuthProvider } from "ndeno-auth";
-import { Box, Button, Input, Label, ThemeProvider } from "ndeno-ui";
+import { Box, Button, Input, Label, ThemeProvider, Heading } from "ndeno-ui";
 
 const REDIRECT_DOMAIN = process.env.NDENO_DOMAIN || "";
 
@@ -17,7 +17,16 @@ function App() {
       // TODO add skeleton suspense
     >
       <ThemeProvider theme="light">
-        <Login />
+        <main className="app-container">
+          <section className="app-left">
+            <Heading variant="primary">{REDIRECT_DOMAIN}</Heading>
+            <Heading variant="secondary">Good to see you.</Heading>
+            <Login />
+          </section>
+          <section className="app-right" >
+            
+          </section>
+        </main>
       </ThemeProvider>
     </AuthProvider>
   );
@@ -38,9 +47,9 @@ function Login() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <Box>
-        <h2>{REDIRECT_DOMAIN} login</h2>
+    <Box variant="primary">
+      <form onSubmit={handleSubmit}>
+        <p>Login for {REDIRECT_DOMAIN} more shenanigans</p>
         <Label htmlFor="email">Email</Label>
         <Input type="text" id="email" autoComplete="chrome-off" />
         <Label htmlFor="password">Password</Label>
@@ -48,8 +57,8 @@ function Login() {
         <Button variant="primary" type="submit">
           Sign in
         </Button>
-      </Box>
-    </form>
+      </form>
+    </Box>
   );
 }
 

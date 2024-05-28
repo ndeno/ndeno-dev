@@ -13,6 +13,9 @@ const ThemeProvider = ({ theme, children }: Props) => {
     <div
       id="ndeno-ui-app"
       className={theme === "light" ? lightTheme : darkTheme}
+      style={{
+        height: "100%",
+      }}
     >
       {children}
     </div>

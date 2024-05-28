@@ -2,15 +2,14 @@ import { style } from "@vanilla-extract/css";
 import { vars } from "../../variables/colors.css";
 
 export const rootStyle = style({
-  width: "200px",
   display: "inline-flex",
   alignItems: "center",
   justifyContent: "center",
   borderRadius: "4px",
-  padding: "0 10px",
-  height: "35px",
-  fontSize: "15px",
-  lineHeight: "1",
+  padding: "0 16px",
+  height: "32px",
+  fontSize: "12px",
+  lineHeight: "32px",
   color: vars.colors.text.highContrast,
   fontFamily: vars.fonts.body,
   backgroundColor: vars.colors.appBackhround.normal,

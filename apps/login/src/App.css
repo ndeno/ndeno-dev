@@ -1,31 +1,64 @@
+@import "@radix-ui/colors/blue.css";
+@import "@radix-ui/colors/gray.css";
+
 body {
-  background-color: var(--jade-2); 
-  font-size: 14px;
+  /* font-size: 14px; */
+  height: 100vh;
+  margin: 0;
 }
 
-button, input { 
+button {
   margin: 8px 0;
 }
 
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: var(--jade-3); 
-  color: var(--jade-8);
+  /* max-width: 1280px;
+  margin: 0 auto; */
+  height: 100%;
+
   font-family: "Roboto";
 }
 
-form {
+.app-container {
   display: flex;
-  flex-direction: column;
-  gap: 6px;
-  max-width: 400px;
-  padding: 16px;
+  flex-direction: row;
+  height: 100%;
 
-  button {
-    max-width: 120px;
+  section {
+    width: 50%;
+  }
+
+  .app-left {
+    h1,
+    h2 {
+      margin: 32px 0;
+    }
+
+    background: var(--gray-2);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      padding: 16px;
+      width: 400px;
+
+      .box {
+        width: 100%;
+      }
+
+      p,
+      button {
+        margin: 16px 0;
+      }
+    }
+  }
+
+  .app-right {
+    background: linear-gradient(var(--blue-1), var(--blue-6));
+    /* background-color: linear-gradient(var(--blue-8), white); */
   }
 }
-
-
