@@ -11,6 +11,7 @@
     "dev:auth": "turbo dev --filter=ndeno-auth",
     "dev:confetti": "turbo dev --filter=confetti",
     "build:login": "turbo build --filter=ndeno-login",
+    "build:login:standalone": "turbo build:standalone --filter=ndeno-login",
     "build:confetti": "turbo build --filter=confetti",
     "clean": "turbo run clean"
   },
