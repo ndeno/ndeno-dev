@@ -5,11 +5,13 @@ import { vanillaExtractPlugin } from "@vanilla-extract/vite-plugin";
 
 const DEV_DOMAIN = process.env.NDENO_DOMAIN || "";
 
-export default defineConfig(({ _command, mode }) => {
+export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
 
   return {
-    base: `https://dev.${DEV_DOMAIN}/login`,
+    base: env.STAND_ALONE
+      ? `https://dev.${DEV_DOMAIN}/login-standalone`
+      : `https://dev.${DEV_DOMAIN}/login`,
     define: {
       global: {},
       "process.env.NDENO_DEV_PUBLIC_CLIENT_1_ID": JSON.stringify(
@@ -19,6 +21,7 @@ export default defineConfig(({ _command, mode }) => {
         env.NDENO_DEV_USER_POOL_ID
       ),
       "process.env.NDENO_DOMAIN": JSON.stringify(env.NDENO_DOMAIN),
+      "process.env.STAND_ALONE": JSON.stringify(env.NDENO_DOMAIN),
     },
     plugins: [react(), vanillaExtractPlugin()],
 

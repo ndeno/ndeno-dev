@@ -7,16 +7,10 @@ body {
   margin: 0;
 }
 
-button {
-  margin: 8px 0;
-}
-
 #root {
-  /* max-width: 1280px;
-  margin: 0 auto; */
   height: 100%;
 
-  font-family: "Montserrat";
+  /* font-family: "Montserrat"; */
 }
 
 .app-container,
@@ -44,7 +38,6 @@ button {
 
   border-radius: 4px;
 
-  /* TODO expose different file */
   .login-container {
     grid-area: central;
 
@@ -54,20 +47,5 @@ button {
     padding: 16px;
 
     width: 400px;
-
-    form {
-      display: flex;
-      flex-direction: column;
-      /* padding: 16px; */
-
-      .box {
-        width: 100%;
-      }
-
-      p,
-      button {
-        margin: 16px 0;
-      }
-    }
   }
 }
