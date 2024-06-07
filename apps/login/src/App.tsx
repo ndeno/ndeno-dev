@@ -18,14 +18,11 @@ function App() {
     >
       <ThemeProvider theme="light">
         <main className="app-container">
-          <section className="app-left">
+          <div className="login-container">
             <Heading variant="primary">{REDIRECT_DOMAIN}</Heading>
             <Heading variant="secondary">Good to see you.</Heading>
             <Login />
-          </section>
-          <section className="app-right" >
-            
-          </section>
+          </div>
         </main>
       </ThemeProvider>
     </AuthProvider>
@@ -49,7 +46,7 @@ function Login() {
   return (
     <Box variant="primary">
       <form onSubmit={handleSubmit}>
-        <p>Login for {REDIRECT_DOMAIN} more shenanigans</p>
+        <p>Login for more shenanigans</p>
         <Label htmlFor="email">Email</Label>
         <Input type="text" id="email" autoComplete="chrome-off" />
         <Label htmlFor="password">Password</Label>

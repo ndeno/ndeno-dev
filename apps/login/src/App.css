@@ -16,7 +16,12 @@ button {
   margin: 0 auto; */
   height: 100%;
 
-  font-family: "Roboto";
+  font-family: "Montserrat";
+}
+
+.app-container,
+.login-container {
+  border-radius: 4px;
 }
 
 .app-container {
@@ -24,27 +29,36 @@ button {
   flex-direction: row;
   height: 100%;
 
-  section {
-    width: 50%;
-  }
+  background: linear-gradient(#ffb07c, var(--blue-10));
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  grid-template-rows: 1fr 3fr 1fr;
 
-  .app-left {
-    h1,
-    h2 {
-      margin: 32px 0;
-    }
+  grid-template-areas:
+    "item1 item2 item3"
+    "item4 central item6"
+    "item7 item8 item9";
+
+  gap: 10px;
+  justify-items: center;
+
+  border-radius: 4px;
+
+  /* TODO expose different file */
+  .login-container {
+    grid-area: central;
 
     background: var(--gray-2);
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    display: grid;
+    padding: 16px;
+
+    width: 400px;
 
     form {
       display: flex;
       flex-direction: column;
-      padding: 16px;
-      width: 400px;
+      /* padding: 16px; */
 
       .box {
         width: 100%;
@@ -55,10 +69,5 @@ button {
         margin: 16px 0;
       }
     }
-  }
-
-  .app-right {
-    background: linear-gradient(var(--blue-1), var(--blue-6));
-    /* background-color: linear-gradient(var(--blue-8), white); */
   }
 }

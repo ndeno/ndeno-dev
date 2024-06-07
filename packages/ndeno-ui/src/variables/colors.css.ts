@@ -14,8 +14,8 @@ const root = createGlobalTheme("#ndeno-ui-app", {
     large: "16px",
   },
   fonts: {
-    heading: "Roboto, sans-seriff",
-    body: "Roboto, sans-seriff",
+    heading: "Montserrat",
+    body: "Montserrat",
   },
 });
 
