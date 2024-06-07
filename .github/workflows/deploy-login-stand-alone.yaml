@@ -1,4 +1,4 @@
-name: Deploy Login
+name: Deploy Login Stnad-alone
 
 on:
   workflow_dispatch:
