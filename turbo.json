@@ -5,6 +5,9 @@
     "build": {
       "dependsOn": ["^build"]
     },
+    "build:standalone": {
+      "dependsOn": ["^build"]
+    },
     "lint": {
       "dependsOn": ["^lint"]
     },
