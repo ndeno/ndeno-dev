@@ -3,14 +3,13 @@ import "./App.css";
 const NDENO_DOMAIN = import.meta.env.NDENO_DOMAIN || "";
 
 function getAllCookies() {
-  var cookies = document.cookie.split(";"); // Split cookies by semicolon
-  var cookieMap = new Map<string, string>();
+  const cookies = document.cookie.split(";");
+  const cookieMap = new Map<string, string>();
 
-  // Iterate through cookies
   cookies.forEach(function (cookie) {
-    var parts = cookie.split("=");
-    var name = parts[0].trim();
-    var value = parts.slice(1).join("=").trim();
+    const parts = cookie.split("=");
+    const name = parts[0].trim();
+    const value = parts.slice(1).join("=").trim();
 
     cookieMap.set(name, decodeURIComponent(value));
   });
@@ -35,8 +34,8 @@ async function handleClick() {
   };
 
   const options = {
-    method: "GET", // HTTP method (GET, POST, PUT, DELETE, etc.)
-    headers: headers, // Custom headers
+    method: "GET",
+    headers: headers,
   };
 
   try {
