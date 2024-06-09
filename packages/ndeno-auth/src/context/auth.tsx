@@ -65,7 +65,6 @@ const AuthProvider = ({ children, onAuthSuccess, onAuthError }: Props) => {
   const [isSignedIn, _setIsSignedIn] = React.useState(false);
 
   React.useEffect(() => {
-    console.log("start");
     verifyWebToken().then(
       (authSuccess) => onAuthSuccess(authSuccess),
       onAuthError
