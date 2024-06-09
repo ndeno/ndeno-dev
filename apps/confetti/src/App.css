@@ -1,15 +1,6 @@
 @import "@radix-ui/colors/blue.css";
 @import "@radix-ui/colors/gray.css";
 
-body {
-  background-color: var(--jade-2);
-  font-size: 14px;
-}
-
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  background-color: var(--jade-3);
-  color: var(--jade-8);
+html {
+  background-color: var(--blue-3);
 }

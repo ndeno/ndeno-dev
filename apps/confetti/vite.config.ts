@@ -12,17 +12,13 @@ export default defineConfig(({ mode }) => {
     base: `https://dev.${DEV_DOMAIN}/confetti`,
     define: {
       global: {},
-      define: {
-        "process.env.NODE_ENV": JSON.stringify("production"),
-        "process.env.NDENO_DOMAIN": JSON.stringify(env.NDENO_DOMAIN),
-      },
-      plugins: [react(), vanillaExtractPlugin()],
-
-      resolve: {
-        alias: {
-          "@": fileURLToPath(new URL("./src", import.meta.url)),
-          "./runtimeConfig": "./runtimeConfig.browser",
-        },
+      "process.env.NDENO_DOMAIN": JSON.stringify(env.NDENO_DOMAIN),
+    },
+    plugins: [react(), vanillaExtractPlugin()],
+    resolve: {
+      alias: {
+        "@": fileURLToPath(new URL("./src", import.meta.url)),
+        "./runtimeConfig": "./runtimeConfig.browser",
       },
     },
   };
