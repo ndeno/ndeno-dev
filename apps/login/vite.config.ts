@@ -9,9 +9,7 @@ export default defineConfig(({ mode }) => {
   const env = loadEnv(mode, process.cwd(), "");
 
   return {
-    base: env.STAND_ALONE
-      ? `https://dev.${DEV_DOMAIN}/login-standalone`
-      : `https://dev.${DEV_DOMAIN}/login`,
+    base: `https://dev.${DEV_DOMAIN}/login`,
     define: {
       global: {},
       "process.env.NDENO_DEV_PUBLIC_CLIENT_1_ID": JSON.stringify(

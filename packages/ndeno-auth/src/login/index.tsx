@@ -1,5 +1,4 @@
-import auth from "./Auth";
-import "./Login.css";
+import auth from "./auth";
 import { Box, Button, Input, Label } from "ndeno-ui";
 
 function Login() {

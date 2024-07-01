@@ -1,7 +1,7 @@
 import "./App.css";
-import { AuthProvider } from "ndeno-auth";
+import { AuthProvider, Login } from "ndeno-auth";
 import { ThemeProvider, Heading } from "ndeno-ui";
-import Login from "./Login";
+import "./Login.css";
 
 const REDIRECT_DOMAIN = process.env.NDENO_DOMAIN || "";
 
