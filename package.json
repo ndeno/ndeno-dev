@@ -19,7 +19,7 @@
     "@repo/typescript-config": "*",
     "prettier": "3.2.5",
     "storybook": "8.0.10",
-    "turbo": "latest"
+    "turbo": "1.13.0"
   },
   "engines": {
     "node": ">=18"
