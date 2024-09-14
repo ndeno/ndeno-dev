@@ -14,8 +14,8 @@
     "@radix-ui/colors": "3.0.0",
     "amazon-cognito-identity-js": "6.3.12",
     "aws-sdk": "2.1574.0",
-    "ndeno-auth": "*",
-    "ndeno-ui": "*",
+    "ndeno-auth": "workspace:*",
+    "ndeno-ui": "workspace:*",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

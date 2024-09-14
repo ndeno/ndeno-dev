@@ -13,8 +13,9 @@
     "clean": "rm -rfv es/"
   },
   "dependencies": {
+    "amazon-cognito-identity-js": "6.3.12",
     "aws-jwt-verify": "4.0.1",
-    "ndeno-ui": "*",
+    "ndeno-ui": "workspace:*",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },

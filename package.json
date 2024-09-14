@@ -2,10 +2,11 @@
   "name": "ndeno-dev",
   "private": true,
   "scripts": {
+    "preinstall": "npx only-allow pnpm", 
     "build": "turbo build",
     "dev": "turbo dev",
     "lint": "turbo lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "format": "prettier --write \"workspace:*workspace:*/workspace:*.{ts,tsx,md}\"",
     "dev:login": "turbo dev --filter=ndeno-login",
     "dev:web": "turbo dev --filter=ndeno-web",
     "dev:auth": "turbo dev --filter=ndeno-auth",
@@ -15,8 +16,8 @@
     "clean": "turbo run clean"
   },
   "devDependencies": {
-    "@repo/eslint-config": "*",
-    "@repo/typescript-config": "*",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
     "prettier": "3.2.5",
     "storybook": "8.0.10",
     "turbo": "1.13.0"
@@ -24,9 +25,9 @@
   "engines": {
     "node": ">=18"
   },
-  "packageManager": "npm@10.2.4",
+  "packageManager": "pnpm@9.4.0",
   "workspaces": [
-    "apps/*",
-    "packages/*"
+    "apps/workspace:*",
+    "packages/workspace:*"
   ]
 }
