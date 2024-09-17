@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+
+    "allowJs": true,
+    "checkJs": true, 
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "jsx": "react",
+    "lib": ["ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "node",
+    // "noEmit": true,
+    "outDir": "./dist",
+    "skipLibCheck": true,
+    "target": "ESNext",
+
+    // "allowJs": true,
+    // "checkJs": true,          // Optional, enables type checking on .js files
+    // "outDir": "./dist",       // Output directory
+    // "target": "es5",          // Transpile to ES5
+    // "module": "commonjs",     // CommonJS modules
+    // "esModuleInterop": true,  // Enable interoperability between ES modules and CommonJS
+    // "moduleResolution": "node"
+    
+
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
