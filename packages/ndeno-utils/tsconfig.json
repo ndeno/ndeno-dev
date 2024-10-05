@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES6",              // Set the JavaScript version to ES6+ (browsers understand ES6 modules)
+    "module": "ES6",              // Use ES6 module syntax (import/export)
+    "moduleResolution": "node",   // Use Node's module resolution, which is compatible with modern module imports
+    "outDir": "./dist",           // Output directory for the compiled JavaScript
+    "sourceMap": true,            // Generate source maps for easier debugging in the browser
+    "strict": true,               // Enable strict type-checking
+    "esModuleInterop": true,      // Allow default imports from CommonJS modules
+    "forceConsistentCasingInFileNames": true,  // Ensure consistent file naming
+    "skipLibCheck": true,          // Skip type checking of declaration files (speeds up compilation)
+
+  },
+  "include": ["src/**/*"],         // Specify the input files (TypeScript files in the src folder)
+  "exclude": ["dist", "node_modules"],
+}
