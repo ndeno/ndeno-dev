@@ -19,7 +19,7 @@
   "version": "0.0.0",
   "description": "Utils and Things",
   "scripts": {
-    "dev:": "pnpm run build && npx serve",
+    "dev": "pnpm run build && npx serve",
     "build": "rollup --config rollup.config.ts --configPlugin typescript"
   },
   "keywords": [],
