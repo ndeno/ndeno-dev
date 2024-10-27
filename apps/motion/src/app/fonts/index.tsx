@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 
+// TODO - cuurently unused
 export const geistSans = localFont({
   src: "./GeistVF.woff",
   variable: "--font-geist-sans",
