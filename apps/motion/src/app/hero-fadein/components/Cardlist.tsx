@@ -1,4 +1,7 @@
+"use client";
+
 import React from "react";
+import { motion } from "framer-motion";
 
 type CardProps = {
   title: string;
@@ -7,7 +10,7 @@ type CardProps = {
 
 const Card = ({ title, description }: CardProps) => {
   return (
-    <div className="flex flex-col md:flex-row items-center md:items-start bg-[#222222] shadow-lg rounded-lg overflow-hidden w-full md:w-1/2 lg:w-1/4">
+    <div className="flex flex-col md:flex-row place-content-evenly md:items-start bg-[#222222] shadow-lg rounded-lg overflow-hidden w-full md:w-1/2 lg:w-1/4">
       <div className="p-4">
         <h2 className="text-xl font-bold mb-2">{title}</h2>
         <p className="text-white">{description}</p>
@@ -35,14 +38,26 @@ const CardList = () => {
     },
   ];
 
+  const animationOptions = {
+    initial: {
+      opacity: 0,
+    },
+    animate: {
+      opacity: 1,
+    },
+    transition: {
+      duration: 1,
+    },
+  };
+
   return (
-    <div className="container mx-auto p-4">
-      <div className="flex center-items flex-wrap gap-4 justify-center">
+    <motion.div className="container mx-auto p-4" {...animationOptions}>
+      <div className="flex center-items flex-wrap gap-8 justify-center">
         {cards.map((card, index) => (
           <Card key={index} title={card.title} description={card.description} />
         ))}
       </div>
-    </div>
+    </motion.div>
   );
 };
 
