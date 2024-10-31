@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { animate, motion } from "framer-motion";
-import Orange1 from "../static/orange1.jpg";
+import Orange from "../static/orange2.jpg";
 
 export default function Hero() {
   const animationOptions = {
@@ -20,7 +20,7 @@ export default function Hero() {
       <motion.div className="flex-1" {...animationOptions}>
         <div className="w-full h-full flex flex-col items-center justify-center">
           <h1 className="text-4xl md:text-6xl text-[#FF7466] text-center">
-            Generic Category Section
+            Generic Hero Fade In
           </h1>
           <span className="w-36 py-8 text-center">
             Lorem ipsum dolor sit, amet consectetur adipisicing elit.
@@ -28,7 +28,7 @@ export default function Hero() {
         </div>
       </motion.div>
       <motion.div className="flex-1" {...animationOptions}>
-        <Image src={Orange1} alt="orange-header" className="rounded-lg" />
+        <Image src={Orange} alt="orange-header" className="rounded-lg" />
       </motion.div>
     </div>
   );

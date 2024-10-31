@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import CardList from "./components/Cardlist";
+// import CardList from "./components/Cardlist";
 import { motion, useInView } from "framer-motion";
 import Image, { StaticImageData } from "next/image";
 import Orange from "./static/orange4.jpg";
@@ -51,7 +51,6 @@ export default function () {
   return (
     <div className="container mx-auto">
       <Hero />
-      <CardList />
       <FadeIn imageSrc={Orange} />
       <FadeIn imageSrc={Orange} />
       <FadeIn imageSrc={Orange} />
