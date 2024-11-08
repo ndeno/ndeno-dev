@@ -1,5 +1,5 @@
 export default function (s: string) {
-  // create left + right pointers + set
+  // create left + right pointers + set + largest count
   let left = 0;
   let right = 0;
   let charSet = new Set<string>();
