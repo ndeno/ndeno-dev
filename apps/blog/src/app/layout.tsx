@@ -1,8 +1,9 @@
-"use client";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { ThemeProvider } from "@/context/ThemeContext";
+import { cookies } from "next/headers";
+import { Theme } from "@/types";
+import Header from "./components/Header";
 
 // add back in
 const geistSans = localFont({
@@ -16,16 +17,21 @@ const geistMonop = localFont({
   weight: "100 900",
 });
 
-
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const { get: getCookies } = await cookies();
+
+  const savedTheme: Theme =
+    getCookies("x-ndeno-blog-theme")?.value === "dark" ? "dark" : "light";
+
   return (
     <html lang="en">
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
+      <body className={savedTheme}>
+        <Header />
+        {children}
       </body>
     </html>
   );

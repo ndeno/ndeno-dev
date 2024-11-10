@@ -1,6 +1,6 @@
 import React from "react";
-
-type Theme = "light" | "dark";
+// TODO https://michaelangelo.io/blog/darkmode-rsc
+import { Theme } from "@/types";
 type ThemeContext = {
   theme: Theme;
   toggleTheme: React.Dispatch<React.SetStateAction<Theme>>;
