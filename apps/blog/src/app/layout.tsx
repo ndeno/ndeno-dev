@@ -30,8 +30,12 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <body className={savedTheme}>
-        <Header />
-        {children}
+        <header className="bg-white dark:bg-gray-800 text-slate-900	dark:text-zinc-100 m-4">
+          <Header />
+        </header>
+        <main className="bg-white dark:bg-gray-800 text-slate-900	dark:text-zinc-100">
+          {children}
+        </main>
       </body>
     </html>
   );
