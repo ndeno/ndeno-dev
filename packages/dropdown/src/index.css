@@ -27,13 +27,20 @@ main {
 }
 
 .dropdown-container {
-  width: 50vh;
+  display: flex;
+  position: relative;
+}
+
+.dropdown-input {
+  width: 100%;
+
   border: 1px solid var(--color-primary-dark);
   border-radius: 5px;
   padding: var(--space-8);
   line-height: var(--space-24);
-
-  overflow: scroll;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
 
   input {
     width: 100%;
