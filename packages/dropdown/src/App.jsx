@@ -1,24 +1,40 @@
 import { useEffect, useState } from "react";
 import "./App.css";
 
-const debounce = (func, time) => {
-  let timer;
+const fetchUsers = async (query) => {
+  if (!query) return;
 
-  return (...args) => {
-    clearTimeout(timer);
-    timer = setTimeout(() => func(...args), time);
-  };
+  try {
+    const response = await fetch(
+      `https://dummyjson.com/users/search?q=${query}`
+    );
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    const data = await response.json();
+
+    return data;
+  } catch (error) {
+    console.error("Error fetching users:", error);
+  }
 };
 
 function App() {
   const [search, setSearch] = useState("");
-  const [debouncedSearch, setDebouncedSearch] = useState("");
+  const [suggestions, setSuggestion] = useState([]);
 
   useEffect(() => {
-    const handleUpdateSearch = debounce(setDebouncedSearch, 1500);
+    const timer = setTimeout(async () => {
+      const suggestions = await fetchUsers(search);
+      setSuggestion(() => suggestions);
+    }, 1000);
 
-    handleUpdateSearch(() => search);
+    return () => clearTimeout(timer);
   }, [search]);
+
+  const suggestionList = suggestions?.users?.length
+    ? suggestions?.users?.map((user) => user.email).slice(0, 5)
+    : [];
 
   return (
     <main>
@@ -31,9 +47,13 @@ function App() {
               value={search}
               onChange={(e) => setSearch(() => e.target.value)}
             />
+            <div className="dropdown-suggestions">
+              {suggestionList.map((email) => (
+                <div key={email}>{email}</div>
+              ))}
+            </div>
           </div>
         </div>
-        {debouncedSearch}
       </div>
     </main>
   );

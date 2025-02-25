@@ -29,11 +29,14 @@ main {
 .dropdown-container {
   display: flex;
   position: relative;
+  width: 600px;
+
+  div {
+    width: 100%;
+  }
 }
 
 .dropdown-input {
-  width: 100%;
-
   border: 1px solid var(--color-primary-dark);
   border-radius: 5px;
   padding: var(--space-8);
@@ -52,4 +55,12 @@ main {
   input:focus {
     outline: none;
   }
+}
+
+.dropdown-suggestions {
+  text-align: start;
+}
+
+.dropdown-suggestions:empty {
+  display: none;
 }
