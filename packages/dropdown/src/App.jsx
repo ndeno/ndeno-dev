@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import randomHexColorGenerator from "./utils/hex-color";
 
 const fetchUsers = async (query) => {
   if (!query) return;
@@ -36,6 +37,8 @@ function App() {
     ? suggestions?.users?.map((user) => user.email).slice(0, 5)
     : [];
 
+  const hexGen = randomHexColorGenerator();
+
   return (
     <main>
       <h1>Dropdown</h1>
@@ -49,7 +52,9 @@ function App() {
             />
             <div className="dropdown-suggestions">
               {suggestionList.map((email) => (
-                <div key={email}>{email}</div>
+                <div key={email}>
+                  <span /> <span>{email}</span>
+                </div>
               ))}
             </div>
           </div>
